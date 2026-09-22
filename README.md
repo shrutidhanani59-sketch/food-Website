@@ -158,27 +158,8 @@ The GitHub repository currently contains the imges folder,
 home.html, home.js, login.html, script.js, and a README file.
 citeturn0view0
 
-▶️ How to Run
 
-1. Clone the repository
 
-git clone https://github.com/shrutidhanani59-sketch/food-Website.git
-
-2. Open the project
-
-cd food-Website
-
-3. Run the website
-
-Open home.html in your browser.
-
-For the best development experience, open the project in VS Code and
-use Live Server.
-
-🌐 Repository
-
-View FoodieHub on
-GitHub
 
 🎯 Project Purpose
 
