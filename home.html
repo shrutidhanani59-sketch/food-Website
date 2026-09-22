@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body {
+    background: #ffffff !important;
+    color: #222222;
+    transition: 0.3s ease;
+}
+
+.nave {
+    background: #ffffff !important;
+    color: #222222;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.12);
+}
+
+.lists li {
+    color: #222222 !important;
+}
+
+.search {
+    background: #ffffff !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.search input {
+    background: #f5f5f5 !important;
+    color: #222222 !important;
+}
+
+.search input::placeholder {
+    color: #777777 !important;
+}
+
+.icon {
+    color: #222222 !important;
+}
+
+.icon button {
+    color: #222222 !important;
+}
+
+.mainImg .box {
+    background: #f5f5f5 !important;
+}
+
+.textPart p {
+    color: #222222;
+}
+
+.box1 {
+    background: #ffffff !important;
+    border-color: #dddddd !important;
+}
+
+.box1 p {
+    color: #222222 !important;
+}
+
+.dish1 {
+    background: #ffffff !important;
+    border-color: #dddddd !important;
+}
+
+.dish1 p {
+    color: #222222 !important;
+}
+
+.my_order .box {
+    background: #ffffff !important;
+    border-color: #cccccc !important;
+}
+
+.my_order p {
+    color: #222222 !important;
+}
+
+#totalPrice {
+    color: #ff7200 !important;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+    background: #000000 !important;
+    color: white !important;
+}
+
+body.dark .nave {
+    background: #050505 !important;
+    color: white !important;
+
+    box-shadow:
+        8px 0 30px rgba(255,255,255,0.08),
+        12px 0 35px rgba(0,0,0,0.9);
+}
+
+body.dark .lists li {
+    color: white !important;
+}
+
+body.dark .lists li:hover {
+    background: #222222 !important;
+    color: #ff7200 !important;
+}
+
+body.dark .search {
+    background: #050505 !important;
+
+    box-shadow:
+        0 8px 25px rgba(255,255,255,0.06),
+        0 10px 30px rgba(0,0,0,0.9);
+}
+
+body.dark .search input {
+    background: #222222 !important;
+    color: white !important;
+    border-color: #777777 !important;
+}
+
+body.dark .search input::placeholder {
+    color: #aaaaaa !important;
+}
+
+body.dark .icon {
+    color: white !important;
+}
+
+body.dark .icon button {
+    color: white !important;
+}
+
+body.dark .mainImg .box {
+    background: #151515 !important;
+}
+
+body.dark .textPart p {
+    color: white !important;
+}
+
+body.dark .box1 {
+    background: #0d0d0d !important;
+    border-color: #444444 !important;
+}
+
+body.dark .box1 p {
+    color: white !important;
+}
+
+body.dark .dish1 {
+    background: #0d0d0d !important;
+    border-color: #333333 !important;
+}
+
+body.dark .dish1 p {
+    color: white !important;
+}
+
+body.dark .my_order .box {
+    background: #0d0d0d !important;
+    border-color: #555555 !important;
+}
+
+body.dark .my_order p {
+    color: white !important;
+}
+
+body.dark #totalPrice {
+    color: #ff7200 !important;
+}
+
+
+/* SMOOTH */
+body,
+.nave,
+.search,
+.mainImg .box,
+.box1,
+.dish1,
+.my_order .box,
+input {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+</style>
+</head>
+
+<body>
+    <div class="wrapper ">
+
+        <div class="nave bg-white shadow-md h-screen w-[130px] fixed">
+            <!-- LOGO -->
+            <div class="logo flex p-2">
+                <img class="h-[30px] w-[30px] object-contain" src="imges/logo.png" alt="FoodieHub Logo">
+                <h1 class="text-red-900 font-bold text-xs mt-1">Foodie <span class="text-orange-500 flex"> Hub</span>
+                </h1>
+            </div>
+
+            <!-- list -->
+
+            <div class="lists  ">
+                <ul>
+                    <li
+                        class="bg-orange-100 font-semibold text-xs text-orange-500 m-1 rounded-md px-1 p-1 hover:cursor-pointer mb-3 mt-4">
+                        <i class="fa-solid fa-house"></i> Home
+                    </li>
+                    <li
+                        class=" hover:bg-orange-100 font-semibold text-xs hover:text-orange-500 m-1 rounded-md px-1 p-1 hover:cursor-pointer mb-3">
+                        <i class="fa-solid fa-grip mr-2"></i> Categories
+                    </li>
+                    <li
+                        class=" hover:bg-orange-100 font-semibold text-xs hover:text-orange-500 m-1 rounded-md px-1 p-1 hover:cursor-pointer mb-3">
+                        <i class="fa-solid fa-star"></i> Popular
+                    </li>
+                    <li
+                        class=" hover:bg-orange-100 font-semibold text-xs hover:text-orange-500 m-1 rounded-md px-1 p-1 hover:cursor-pointer mb-3">
+                        <i class="fa-solid fa-bag-shopping"></i> Orders
+                    </li>
+                    <li
+                        class=" hover:bg-orange-100 font-semibold text-xs hover:text-orange-500 m-1 rounded-md px-1 p-1 hover:cursor-pointer mb-3">
+                        <i class="fa-solid fa-tag"></i> Offers
+                    </li>
+                    <li
+                        class=" hover:bg-orange-100 font-semibold text-xs hover:text-orange-500 m-1 rounded-md px-1 p-1 hover:cursor-pointer mb-3">
+                        <i class="fa-solid fa-phone"></i> Contact Us
+                    </li>
+                </ul>
+            </div>
+
+            <!-- img -->
+            <div class="box h-[200px] w-[120px] bg-orange-100 mt-[68px] rounded-2xl ml-1">
+                <img class="p-4" src="imges/driver.png" alt="">
+                <p class="text-orange-600 font-bold text-center">Free Delivert</p>
+                <p class="text-center text-xs">On orders above</p>
+                <p class="text-center font-bold">₹299</p>
+            </div>
+        </div>
+
+        <div
+            class="search bg-white shadow-md h-[70px] fixed top-0 left-[130px] right-0 z-40 p-4 flex items-center justify-between">
+
+            <!-- Search -->
+            <div class="searchBtn">
+                <input 
+    id="searchInput"
+    class="ring-1 rounded-2xl px-3 outline-none text-xs p-2 w-[400px]" 
+    type="text"
+    placeholder="Search for food, restaurants..."
+>
+            </div>
+
+            <!-- Icons -->
+           <div class="icon mr-[50px] flex items-center gap-7 text-xl">
+
+    <i class="fa-regular fa-heart cursor-pointer hover:text-orange-500"></i>
+
+    <i class="fa-solid fa-cart-arrow-down cursor-pointer hover:text-orange-500"></i>
+
+    <!-- DARK / LIGHT MODE -->
+
+    <p>
+        <i class="fa-solid fa-circle-user cursor-pointer hover:text-orange-500"></i>
+        <span class="text-xs">
+            shruti
+        </span>
+    </p>
+
+    <button
+        id="themeToggle"
+        class="text-gray-700 hover:text-orange-500 cursor-pointer">
+
+        <i id="themeIcon" class="fa-solid fa-moon"></i>
+
+    </button>
+
+</div>
+
+            
+
+        </div>
+
+        <div class="mainImg pt-[60px] ml-[121px] flex">
+            <div class="box h-[330px] w-[760px]  ml-5 mt-5 rounded-2xl flex justify-between">
+
+                <div class="textPart">
+                    <p class="text-red-900 font-bold text-4xl ml-[50px] pt-[69px]">Great Food, <span
+                            class="flex text-orange-500">Good Life</span> </p>
+                    <p class="ml-[50px] text-xs mt-[10px] font-semibold">Delicious meals, happy moments. <span
+                            class="flex">Delivered fast to your door.</span> </p>
+                    <button
+                        class="ml-[50px] bg-orange-500 text-white p-1 mt-[10px] rounded-2xl hover:bg-orange-600">Order
+                        Now <i class="fa-solid fa-arrow-right"></i> </button>
+                </div>
+
+                <div class="imgPart">
+                    <img class="h-[300px] w-[400px] mt-[0px]" src="imges/pasta2.png" alt="">
+                </div>
+            </div>
+
+            <div class="my_order fixed right-4 top-[80px] bottom-4 z-30">
+
+                <div class="box h-[330px] w-[170px] rounded-2xl ring-1 ring-gray-200 bg-white p-2 flex flex-col -mr-2">
+
+                    <!-- TOP -->
+                    <div class="top flex items-center justify-between shrink-0">
+
+                        <p class="p-1 text-[13px] font-semibold">
+                            Your Order
+                        </p>
+
+                        <p class="p-1 text-orange-600 text-[13px] font-semibold cursor-pointer">
+                            View Cart
+                        </p>
+
+                    </div>
+
+
+                    <!-- ORDER ITEMS -->
+                    <!-- ફક્ત આ ભાગ scroll થશે -->
+                    <div id="orderList" class="mt-3 flex-1 min-h-0 overflow-y-auto space-y-2 pr-1">
+
+                        <!-- ADD+ કરવાથી products અહીં આવશે -->
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+                    <div class="border-t border-gray-200 mt-2 pt-3 flex justify-between shrink-0">
+
+                        <p class="text-sm font-semibold">
+                            Total
+                        </p>
+
+                        <p id="totalPrice" class="text-sm font-bold">
+                            ₹0
+                        </p>
+
+                    </div>
+
+
+                    <!-- CHECKOUT -->
+                    <button id="checkoutBtn" class="w-full bg-orange-500 hover:bg-orange-600
+                   text-white text-sm font-semibold
+                   py-2 rounded-lg mt-3 shrink-0">
+
+                        Checkout
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="serveres flex ">
+            <div class="part1">
+                <div class="boxes flex gap-5 mt-[0px]">
+                    <div
+                        class="box1 h-[100px] w-[173px] shrink-0 ring-1 ring-gray-200 rounded-md  ml-[145px] mt-[30px]">
+
+                        <div class="parts flex">
+                            <div class="imgpart">
+                                <img class="mt-[10px] h-[80px] w-[70px]" src="imges/servies1.png" alt="">
+                            </div>
+                            <div class="textpart mt-[20px]">
+                                <p class="font-bold text-xs">Fast Delivery</p>
+                                <p class="text-xs text-gray-600">Lightnight fast delivery</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="box1 h-[100px] w-[173px] shrink-0 ring-1 ring-gray-200 rounded-md  mt-[30px]">
+                        <div class="parts flex">
+                            <div class="imgpart">
+                                <img class="mt-[10px] h-[80px] w-[70px]" src="imges/servies2.png" alt="">
+                            </div>
+                            <div class="textpart mt-[20px]">
+                                <p class="font-bold text-xs">Secure payment</p>
+                                <p class="text-xs text-gray-600"> 100% Secure payment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box1 h-[100px] w-[173px] shrink-0 ring-1 ring-gray-200 rounded-md   mt-[30px]">
+                        <div class="parts flex">
+                            <div class="imgpart">
+                                <img class="mt-[10px] h-[80px] w-[70px]" src="imges/servies3.png" alt="">
+                            </div>
+                            <div class="textpart mt-[20px]">
+                                <p class="font-bold text-xs">Best offers</p>
+                                <p class="text-xs text-gray-600">Exciting offers everyday</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box1 h-[100px] w-[173px] shrink-0 ring-1 ring-gray-200 rounded-md   mt-[30px]">
+                        <div class="parts flex">
+                            <div class="imgpart">
+                                <img class="mt-[10px] h-[80px] w-[70px]" src="imges/servies4.png" alt="">
+                            </div>
+                            <div class="textpart mt-[20px]">
+                                <p class="font-bold text-xs">24/7 Support</p>
+                                <p class="text-xs text-gray-600">We are here for you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part2 fixed ml-[900px]">
+                <img class="w-[173px] h-[160px] ml-[10px]" src="imges/combo.png" alt="">
+            </div>
+        </div>
+
+        <div class="dish">
+
+            <!-- ROW 1 -->
+            <div class="dishes flex gap-5">
+
+                <!-- 1 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 ml-[145px] rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product1.png" alt="">
+                    <p class="px-2 font-bold">Creamy Alfredo Pasta</p>
+                    <p class="text-[12px] px-2">Rich, creamy pasta with parmesan, herbs, and garlic.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹299</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product2.png" alt="">
+                    <p class="px-2 font-bold">Spicy Arrabbiata Pasta</p>
+                    <p class="text-[12px] px-2">Tangy tomato pasta with garlic, chili, and fresh herbs.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹249</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product3.png" alt="">
+                    <p class="px-2 font-bold">Margherita Pizza</p>
+                    <p class="text-[12px] px-2">Classic pizza topped with tomato, mozzarella, and fresh basil.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹349</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROW 2 -->
+            <div class="dishes flex gap-5">
+
+                <!-- 4 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 ml-[145px] rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product4.png" alt="">
+                    <p class="px-2 font-bold">Chicken Cheese Burger</p>
+                    <p class="text-[12px] px-2">Juicy chicken patty with melted cheese and fresh veggies.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹199</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product5.png" alt="">
+                    <p class="px-2 font-bold">Crispy Chicken Wings</p>
+                    <p class="text-[12px] px-2">Crispy golden wings tossed in flavorful spicy sauce.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹279</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product6.png" alt="">
+                    <p class="px-2 font-bold">Veggie Supreme Pizza</p>
+                    <p class="text-[12px] px-2">Loaded pizza with colorful vegetables, cheese, and Italian herbs.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹399</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROW 3 -->
+            <div class="dishes flex gap-5">
+
+                <!-- 7 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 ml-[145px] rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product7.png" alt="">
+                    <p class="px-2 font-bold">Cheesy Garlic Bread</p>
+                    <p class="text-[12px] px-2">Toasted bread topped with garlic butter and melted cheese.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹149</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product8.png" alt="">
+                    <p class="px-2 font-bold">Classic Club Sandwich</p>
+                    <p class="text-[12px] px-2">Fresh triple-layer sandwich with chicken, vegetables, cheese, and
+                        sauces.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹229</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product9.png" alt="">
+                    <p class="px-2 font-bold">Paneer Tikka Wrap</p>
+                    <p class="text-[12px] px-2">Spicy grilled paneer wrapped with fresh vegetables and creamy sauce.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹199</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROW 4 -->
+            <div class="dishes flex gap-5">
+
+                <!-- 10 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 ml-[145px] rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product10.png" alt="">
+                    <p class="px-2 font-bold">Chocolate Lava Cake</p>
+                    <p class="text-[12px] px-2">Warm chocolate cake filled with rich, gooey molten chocolate.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹179</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product11.png" alt="">
+                    <p class="px-2 font-bold">Fresh Strawberry Cake</p>
+                    <p class="text-[12px] px-2">Soft vanilla cake layered with cream and fresh strawberries.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹249</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product12.png" alt="">
+                    <p class="px-2 font-bold">Creamy Mushroom Pasta</p>
+                    <p class="text-[12px] px-2">Creamy pasta loaded with tender mushrooms, herbs, and parmesan.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹279</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROW 5 -->
+            <div class="dishes flex gap-5">
+
+                <!-- 13 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 ml-[145px] rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product13.png" alt="">
+                    <p class="px-2 font-bold">Loaded Cheese Fries</p>
+                    <p class="text-[12px] px-2">Crispy fries covered with melted cheese and flavorful toppings.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹159</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product14.png" alt="">
+                    <p class="px-2 font-bold">Grilled Chicken Sandwich</p>
+                    <p class="text-[12px] px-2">Grilled chicken with fresh vegetables, cheese, and delicious creamy
+                        sauce.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹259</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+                <!-- 15 -->
+                <div
+                    class="dish1 h-[310px] w-[238px] shrink-0 ring-1 ring-gray-200 rounded-md mt-[33px] overflow-hidden">
+                    <img class="h-[175px] w-full object-cover" src="imges/product15.png" alt="">
+                    <p class="px-2 font-bold">Chocolate Brownie Sundae</p>
+                    <p class="text-[12px] px-2">Warm fudgy brownie topped with ice cream and chocolate sauce.</p>
+                    <p class="text-xs px-2">⭐⭐⭐⭐</p>
+                    <div class="bottom flex justify-between">
+                        <p class="px-2 font-bold p-1">₹189</p>
+                        <button class="text-xs bg-orange-500 text-white p-1 rounded-2xl px-3 mr-2">ADD+</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+
+
+    <!-- ================= FOOD DETAILS POPUP ================= -->
+
+<div id="foodModal"
+    class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-[2000]">
+
+    <div class="relative w-[420px] bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+        <!-- Close -->
+        <button id="closeModal"
+            class="absolute right-4 top-4 w-9 h-9 rounded-full bg-black text-white text-xl z-10 hover:bg-orange-500">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Food Image -->
+        <div class="w-full h-[230px] bg-gray-100 flex items-center justify-center">
+            <img id="modalImage"
+                src=""
+                class="w-[230px] h-[210px] object-contain">
+        </div>
+
+        <!-- Details -->
+        <div class="p-6">
+
+            <h2 id="modalName"
+                class="text-2xl font-bold text-gray-900 mb-2">
+            </h2>
+
+            <div class="flex items-center gap-2 mb-3">
+
+                <span class="text-orange-500">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span class="text-gray-500 text-sm">
+                    4.8 (120 Reviews)
+                </span>
+
+            </div>
+
+            <p id="modalDescription"
+                class="text-gray-600 text-sm leading-6 mb-4">
+            </p>
+
+            <div class="flex items-center justify-between">
+
+                <p id="modalPrice"
+                    class="text-2xl font-bold text-orange-500">
+                </p>
+
+                <button id="modalAddBtn"
+                    class="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600">
+                    <i class="fa-solid fa-cart-plus mr-2"></i>
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="home.js"></script>
+</body>
+
+</html>

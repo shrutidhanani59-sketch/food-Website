@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodieHub Login</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-orange-50 h-screen overflow-hidden">
+
+    <div class="wrapper flex h-screen">
+
+        <!-- ================= RIGHT PART ================= -->
+        <div
+            class="rightPart relative h-screen w-1/2 overflow-hidden bg-gradient-to-br from-[#ff2d20] via-[#ff5a0a] to-[#ff9f43]">
+
+            <!-- Background Shapes -->
+            <div
+                class="absolute -top-[120px] -right-[100px] w-[380px] h-[380px] rounded-full bg-orange-300/30">
+            </div>
+
+            <div
+                class="absolute top-[40%] -left-[180px] w-[400px] h-[400px] rounded-full bg-red-700/20">
+            </div>
+
+            <div
+                class="absolute -bottom-[150px] right-[15%] w-[350px] h-[350px] rounded-full bg-yellow-300/20">
+            </div>
+
+
+            <!-- TOP TEXT -->
+            <div class="absolute top-[10px] left-[20px] z-20 text-white">
+
+                <h2 class="text-4xl font-bold">
+                    Delicious Food
+                </h2>
+
+                <p class="text-lg mt-2 text-orange-100">
+                    Taste the happiness in every bite 🍕
+                </p>
+
+            </div>
+
+
+            <!-- OFFER BADGE -->
+            <div
+                class="absolute top-[190px] left-[20px] z-20 bg-white/95 rounded-2xl px-5 py-3 shadow-xl">
+
+                <p class="text-red-600 font-bold text-lg">
+                    🎁 30% OFF
+                </p>
+
+                <p class="text-gray-600 text-xs">
+                    On your first order
+                </p>
+
+            </div>
+
+
+            <!-- Decorative Dots -->
+            <div class="absolute top-[120px] left-[80px] flex gap-2">
+
+                <span class="w-2 h-2 rounded-full bg-white/70"></span>
+
+                <span class="w-2 h-2 rounded-full bg-yellow-200"></span>
+
+                <span class="w-2 h-2 rounded-full bg-white/70"></span>
+
+            </div>
+
+
+            <!-- CHEF IMAGE -->
+            <img
+                class="absolute bottom-0 left-[170px] h-[88%] object-contain z-10"
+                src="imges/login.png"
+                alt="Chef">
+
+
+            <!-- RATING -->
+            <div
+                class="absolute bottom-[55px] left-[45px] z-20 bg-white/95 rounded-xl px-4 py-3 shadow-lg">
+
+                <div class="flex items-center gap-2">
+
+                    <span class="text-yellow-500 text-lg">
+                        ★★★★★
+                    </span>
+
+                    <span class="font-bold text-gray-700">
+                        4.9/5
+                    </span>
+
+                </div>
+
+                <p class="text-xs text-gray-500 mt-1">
+                    Loved by 10K+ foodies
+                </p>
+
+            </div>
+
+
+            <!-- RIGHT SIDE DOTS -->
+            <div class="absolute bottom-[180px] right-[70px] flex gap-2 z-20">
+
+                <span class="w-2 h-2 rounded-full bg-white/60"></span>
+
+                <span class="w-2 h-2 rounded-full bg-yellow-200"></span>
+
+                <span class="w-2 h-2 rounded-full bg-white/60"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= LEFT LOGIN PART ================= -->
+        <div
+            class="leftPart w-1/2 flex items-center justify-center bg-[#fff1e6]">
+
+            <div class="w-[470px] px-8">
+
+
+                <!-- LOGO -->
+                <div class="flex flex-col items-center">
+
+                    <img
+                        class="h-[70px] w-[70px] object-contain"
+                        src="imges/logo.png"
+                        alt="FoodieHub Logo">
+
+                    <h1 class="text-red-900 font-bold text-2xl mt-1">
+
+                        Foodie
+                        <span class="text-orange-500">
+                            Hub
+                        </span>
+
+                    </h1>
+
+                </div>
+
+
+                <!-- TITLE -->
+                <p
+                    class="text-red-900 font-bold text-3xl mt-[20px]">
+
+                    Welcome FoodieHub 👋
+
+                </p>
+
+
+                <p class="text-gray-500 text-sm mt-2">
+
+                    Login to continue your delicious journey.
+
+                </p>
+
+
+                <!-- EMAIL -->
+                <div class="relative mt-[25px]">
+
+                    <i
+                        class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-orange-600">
+                    </i>
+
+                    <input
+                        class="bg-orange-50 border border-orange-200 rounded-xl pl-[45px] pr-3 py-3 outline-none w-full focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition email"
+                        type="email"
+                        placeholder="Enter Your Email"
+                        id="email">
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="relative mt-[15px]">
+
+                    <i
+                        class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-orange-600">
+                    </i>
+
+                    <input
+                        id="password"
+                        class="bg-orange-50 border border-orange-200 rounded-xl pl-[45px] pr-[45px] py-3 outline-none w-full focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition password "
+                        type="password"
+                        placeholder="Enter Your Password">
+
+
+                    <!-- SHOW PASSWORD -->
+                    <i
+                        id="eye"
+                        class="fa-solid fa-eye absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer hover:text-orange-600 transition">
+                    </i>
+
+                </div>
+
+
+                <!-- FORGOT PASSWORD -->
+                <div class="w-full flex justify-end mt-2">
+
+                    <a
+                        href="#"
+                        class="text-sm text-red-600 hover:text-orange-500 hover:underline">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+                <button
+                    class="mt-[20px] w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white font-bold py-3 rounded-xl transition duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 btn btn">
+
+                    <i
+                        class="fa-solid fa-right-to-bracket mr-2">
+                    </i>
+
+                    Login
+
+                </button>
+
+
+                <!-- SIGN UP -->
+                <p
+                    class="text-gray-500 text-sm mt-4 text-center">
+
+                    Don't have an account?
+
+                    <a
+                        href="#"
+                        class="text-orange-600 font-bold hover:text-red-600 hover:underline">
+
+                        Sign Up
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
